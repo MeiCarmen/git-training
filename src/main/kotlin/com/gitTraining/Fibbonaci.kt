@@ -24,3 +24,10 @@ fun computeFibbonaciNumber(position: Int?): Int {
     }
     return j
 }
+
+fun computeNegativeFibbonachi(position:Int): Int {
+    if (position >= 0) throw Exception("potition must be smaller than zero!")
+    val resultIsNegative = position % 2 == 0
+    val absoluteResult = computeFibbonaciNumber(-position)
+    return if (resultIsNegative) (absoluteResult * -1) else absoluteResult
+}
